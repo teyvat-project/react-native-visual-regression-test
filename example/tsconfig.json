@@ -1,0 +1,10 @@
+{
+  "extends": "@react-native/typescript-config",
+  "compilerOptions": {
+    "types": [],
+    "paths": {
+      "react-native-visual-regression-test": ["../src/native/index.tsx"]
+    }
+  },
+  "include": ["src", ".rnstorybook"]
+}

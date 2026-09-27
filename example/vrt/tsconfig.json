@@ -1,0 +1,10 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "types": ["node"],
+    "paths": {
+      "react-native-visual-regression-test/vitest": ["../../src/vitest/index.ts"]
+    }
+  },
+  "include": [".", "../vitest.config.mts"]
+}

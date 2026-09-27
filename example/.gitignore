@@ -1,0 +1,19 @@
+# CocoaPods / Xcode
+ios/Pods/
+ios/build/
+.xcode.env.local
+
+# Gradle
+android/.gradle/
+android/.kotlin/
+android/build/
+android/app/build/
+android/app/.cxx/
+android/local.properties
+
+# Vitest copies of attached diff images
+.vitest/
+
+# Baselines depend on the simulator and emulator they were taken on, so the example does not commit them.
+# In your app, commit the __vrt__ directory.
+__vrt__/

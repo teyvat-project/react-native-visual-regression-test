@@ -1,0 +1,11 @@
+packages:
+  - example
+
+# React Native's Gradle and CocoaPods tooling expects a flat node_modules.
+nodeLinker: hoisted
+
+# The example runs Storybook in lite mode, so the on-device UI peers (reanimated etc.) are not needed.
+autoInstallPeers: false
+
+allowBuilds:
+  esbuild: false

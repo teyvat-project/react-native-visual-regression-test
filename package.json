@@ -1,0 +1,101 @@
+{
+  "name": "@natsuneko-laboratory/react-native-visual-regression-test",
+  "version": "0.1.0",
+  "description": "Visual regression tests for React Native Storybook stories, run from Vitest",
+  "keywords": [
+    "react-native",
+    "storybook",
+    "vitest",
+    "visual-regression",
+    "screenshot",
+    "ios",
+    "android"
+  ],
+  "homepage": "https://github.com/mika-f/react-native-visual-regression-test#readme",
+  "bugs": {
+    "url": "https://github.com/mika-f/react-native-visual-regression-test/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mika-f/react-native-visual-regression-test.git"
+  },
+  "license": "MIT",
+  "author": "mika-f",
+  "packageManager": "pnpm@12.3.4",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "exports": {
+    ".": {
+      "react-native-visual-regression-test-source": "./src/native/index.tsx",
+      "types": "./lib/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./vitest": {
+      "react-native-visual-regression-test-source": "./src/vitest/index.ts",
+      "types": "./lib/vitest.d.mts",
+      "default": "./lib/vitest.mjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "src",
+    "lib",
+    "android",
+    "ios",
+    "*.podspec",
+    "!android/build",
+    "!android/.gradle",
+    "!android/.cxx",
+    "!android/local.properties",
+    "!ios/build",
+    "!**/.*"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "prepare": "pnpm run build",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "example": "pnpm --filter react-native-visual-regression-test-example"
+  },
+  "dependencies": {
+    "pixelmatch": "^7.1.0",
+    "pngjs": "^7.0.0"
+  },
+  "peerDependencies": {
+    "react": ">=19",
+    "react-native": ">=0.80",
+    "vitest": ">=4"
+  },
+  "peerDependenciesMeta": {
+    "vitest": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/pngjs": "^6.0.0",
+    "@types/react": "^19.2.0",
+    "react": "19.2.3",
+    "react-native": "0.87.1",
+    "tsdown": "^0.23.0",
+    "typescript": "^5.9.0",
+    "vite": "^8.3.1",
+    "vitest": "^5.0.2"
+  },
+  "engines": {
+    "node": ">=20.19"
+  },
+  "codegenConfig": {
+    "name": "RNVrtCaptureSpec",
+    "type": "modules",
+    "jsSrcsDir": "src/native",
+    "android": {
+      "javaPackageName": "com.natsuneko.vrt"
+    },
+    "ios": {
+      "modulesProvider": {
+        "VrtCapture": "VrtCapture"
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+node_modules/
+coverage/
+lib/
+dist/
+*.tsbuildinfo
+__diffs__/
+
+# Android/IntelliJ
+android/build/
+android/.gradle/
+android/.cxx/
+android/local.properties
+.idea/
+*.iml
+
+# Xcode
+build/
+xcuserdata/
+DerivedData/
+*.xcworkspace/xcuserdata
+
+.DS_Store
+.vitest/
