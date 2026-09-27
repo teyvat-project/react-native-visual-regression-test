@@ -33,7 +33,7 @@ Each story is rendered in your real Storybook app on an iOS simulator or Android
 ### 1. Install
 
 ```bash
-npm install --save-dev react-native-visual-regression-test
+npm install --save-dev @natsuneko-laboratory/react-native-visual-regression-test
 ```
 
 The package contains native code, so rebuild the app afterwards (`pod install`, then build for iOS and Android).
@@ -44,7 +44,7 @@ Add the `withVrt` decorator in `.rnstorybook/preview.tsx`. It wraps each story i
 
 ```tsx
 import type { Preview } from '@storybook/react-native';
-import { withVrt } from 'react-native-visual-regression-test';
+import { withVrt } from '@natsuneko-laboratory/react-native-visual-regression-test';
 
 const preview: Preview = {
   decorators: [withVrt],
@@ -58,7 +58,7 @@ export default preview;
 In `.rnstorybook/index.tsx`, start the agent next to the Storybook UI. It connects to Vitest on your machine and does nothing until a test run starts.
 
 ```tsx
-import { startVrtAgent } from 'react-native-visual-regression-test';
+import { startVrtAgent } from '@natsuneko-laboratory/react-native-visual-regression-test';
 import { view } from './storybook.requires';
 
 const StorybookUIRoot = view.getStorybookUI({
@@ -80,7 +80,7 @@ The agent works with or without the on-device UI, as long as the story is visibl
 
 ```ts
 // vrt/stories.test.ts
-import { defineStoryTests } from 'react-native-visual-regression-test/vitest';
+import { defineStoryTests } from '@natsuneko-laboratory/react-native-visual-regression-test/vitest';
 
 await defineStoryTests();
 ```
@@ -131,7 +131,7 @@ export const Loading: Story = { tags: ['no-vrt'] };
 The agent captures a story once its `VrtBoundary` has been laid out, two frames have been drawn, and `settleMs` has passed. For content that loads later, such as images, hold the capture with `useVrtPending`:
 
 ```tsx
-import { useVrtPending } from 'react-native-visual-regression-test';
+import { useVrtPending } from '@natsuneko-laboratory/react-native-visual-regression-test';
 
 function Avatar({ uri }: { uri: string }) {
   const [loaded, setLoaded] = useState(false);
@@ -203,7 +203,7 @@ The building blocks are exported for custom flows:
 
 ```ts
 import { afterAll, expect, test } from 'vitest';
-import { createVrtServer, installVrtMatcher } from 'react-native-visual-regression-test/vitest';
+import { createVrtServer, installVrtMatcher } from '@natsuneko-laboratory/react-native-visual-regression-test/vitest';
 
 installVrtMatcher({ snapshotDir: '__vrt__' });
 
