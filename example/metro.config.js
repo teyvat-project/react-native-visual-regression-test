@@ -7,7 +7,7 @@ const config = getDefaultConfig(__dirname);
 
 // Resolve the library from the repository root, using its TypeScript sources.
 config.watchFolders = [root];
-config.resolver.extraNodeModules = { 'react-native-visual-regression-test': root };
+config.resolver.extraNodeModules = { '@natsuneko-laboratory/react-native-visual-regression-test': root };
 config.resolver.unstable_conditionNames = [
   ...config.resolver.unstable_conditionNames,
   'react-native-visual-regression-test-source',

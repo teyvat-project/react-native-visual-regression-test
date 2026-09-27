@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ActivityIndicator, Image, StyleSheet, Text, View, type ImageSourcePropType } from 'react-native';
-import { useVrtPending } from 'react-native-visual-regression-test';
+import { useVrtPending } from '@natsuneko-laboratory/react-native-visual-regression-test';
 
 export type CardProps = {
   title: string;

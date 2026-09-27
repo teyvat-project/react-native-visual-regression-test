@@ -1,4 +1,4 @@
-import { startVrtAgent } from 'react-native-visual-regression-test';
+import { startVrtAgent } from '@natsuneko-laboratory/react-native-visual-regression-test';
 import { view } from './storybook.requires';
 
 const StorybookUIRoot = view.getStorybookUI({
