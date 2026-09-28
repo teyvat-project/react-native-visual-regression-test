@@ -3,7 +3,7 @@
   "compilerOptions": {
     "types": [],
     "paths": {
-      "react-native-visual-regression-test": ["../src/native/index.tsx"]
+      "@natsuneko-laboratory/react-native-visual-regression-test": ["../src/native/index.tsx"]
     }
   },
   "include": ["src", ".rnstorybook"]

@@ -1,4 +1,4 @@
-import { defineStoryTests } from 'react-native-visual-regression-test/vitest';
+import { defineStoryTests } from '@natsuneko-laboratory/react-native-visual-regression-test/vitest';
 
 // Waits for the Storybook app to connect, then registers one test per story.
 // Baselines are written to __vrt__/<platform>/<story id>.png.
