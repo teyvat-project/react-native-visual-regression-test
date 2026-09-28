@@ -5,7 +5,7 @@ export default defineConfig({
   resolve: {
     alias: {
       // In your app, the package is installed and this alias is not needed.
-      'react-native-visual-regression-test/vitest': fileURLToPath(new URL('../src/vitest/index.ts', import.meta.url)),
+      '@natsuneko-laboratory/react-native-visual-regression-test/vitest': fileURLToPath(new URL('../src/vitest/index.ts', import.meta.url)),
     },
   },
   test: {
