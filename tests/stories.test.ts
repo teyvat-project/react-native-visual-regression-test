@@ -61,7 +61,11 @@ describe('defineStoryTests', () => {
     const outputFile = join(snapshotDir, 'report.json');
     rmSync(outputFile, { force: true });
     const childEnv: NodeJS.ProcessEnv = { ...process.env, VRT_PORT: String(port), VRT_SNAPSHOT_DIR: snapshotDir, ...env };
-    if (!env.CI) delete childEnv.CI;
+    // Vitest also detects CI from provider variables such as GITHUB_ACTIONS, and then never writes new baselines.
+    if (!env.CI) {
+      delete childEnv.CI;
+      delete childEnv.GITHUB_ACTIONS;
+    }
     await new Promise<void>((done) => {
       execFile(process.execPath, [vitestCli, 'run', '--root', fixture, '--reporter=json', `--outputFile=${outputFile}`, ...args], { env: childEnv }, () => done());
     });
